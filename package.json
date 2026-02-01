@@ -1,0 +1,40 @@
+{
+    "name": "your-package-name",
+    "version": "0.1.0",
+    "description": "Your package description",
+    "type": "module",
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "import": "./dist/index.js"
+        }
+    },
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "files": ["dist"],
+    "scripts": {
+        "build": "tsc",
+        "check": "biome check .",
+        "check:fix": "biome check --write .",
+        "typecheck": "tsc --noEmit",
+        "test": "bun test",
+        "test:coverage": "bun test --coverage"
+    },
+    "keywords": ["keyword1", "keyword2", "keyword3"],
+    "author": "Your Name <your.email@example.com>",
+    "license": "Apache-2.0",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/yourusername/your-repo.git"
+    },
+    "bugs": {
+        "url": "https://github.com/yourusername/your-repo/issues"
+    },
+    "homepage": "https://github.com/yourusername/your-repo#readme",
+    "devDependencies": {
+        "@biomejs/biome": "^1.9.0",
+        "@types/bun": "latest",
+        "typescript": "^5.7.0"
+    },
+    "trustedDependencies": ["@biomejs/biome"]
+}
