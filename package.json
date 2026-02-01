@@ -1,6 +1,6 @@
 {
     "name": "your-package-name",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "description": "Your package description",
     "type": "module",
     "exports": {
@@ -11,7 +11,9 @@
     },
     "main": "./dist/index.js",
     "types": "./dist/index.d.ts",
-    "files": ["dist"],
+    "files": [
+        "dist"
+    ],
     "scripts": {
         "build": "tsc",
         "check": "biome check .",
@@ -20,7 +22,11 @@
         "test": "bun test",
         "test:coverage": "bun test --coverage"
     },
-    "keywords": ["keyword1", "keyword2", "keyword3"],
+    "keywords": [
+        "keyword1",
+        "keyword2",
+        "keyword3"
+    ],
     "author": "Your Name <your.email@example.com>",
     "license": "Apache-2.0",
     "repository": {
@@ -36,5 +42,7 @@
         "@types/bun": "latest",
         "typescript": "^5.7.0"
     },
-    "trustedDependencies": ["@biomejs/biome"]
+    "trustedDependencies": [
+        "@biomejs/biome"
+    ]
 }
