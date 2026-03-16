@@ -1,6 +1,6 @@
 # JavaScript Template
 
-A minimalistic template for JavaScript/TypeScript projects that use [Cursor](https://cursor.com/en)/[VSCode](https://code.visualstudio.com/) and [Claude Code](https://code.claude.com/docs/en/overview).
+A2A Net's template for JavaScript/TypeScript projects that use [Cursor](https://cursor.com/en)/[VSCode](https://code.visualstudio.com/) and [Claude Code](https://code.claude.com/docs/en/overview).
 Uses [Bun](https://bun.sh/), [Biome](https://biomejs.dev/), and [TypeScript](https://www.typescriptlang.org/).
 
 ## Prerequisites

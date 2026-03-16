@@ -21,16 +21,16 @@
         "test:coverage": "bun test --coverage"
     },
     "keywords": ["keyword1", "keyword2", "keyword3"],
-    "author": "Your Name <your.email@example.com>",
+    "author": "A2A Net <hello@a2anet.com>",
     "license": "Apache-2.0",
     "repository": {
         "type": "git",
-        "url": "https://github.com/yourusername/your-repo.git"
+        "url": "https://github.com/A2ANet/javascript-template.git"
     },
     "bugs": {
-        "url": "https://github.com/yourusername/your-repo/issues"
+        "url": "https://github.com/A2ANet/javascript-template/issues"
     },
-    "homepage": "https://github.com/yourusername/your-repo#readme",
+    "homepage": "https://github.com/A2ANet/javascript-template#readme",
     "devDependencies": {
         "@biomejs/biome": "^1.9.0",
         "@types/bun": "latest",
