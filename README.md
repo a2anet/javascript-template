@@ -115,33 +115,38 @@ This template uses [release-please](https://github.com/googleapis/release-please
 
 ##### Enable Publishing
 
-The `release-please.yml` workflow includes npm publishing but requires setup.
+The `release-please.yml` workflow includes npm publishing via Trusted Publishing (OIDC) but requires setup.
 
 To enable npm publishing:
 
 1. **Create an npm account** at https://www.npmjs.com
 
-2. **Generate an Access Token on npm**:
+2. **Publish the first version manually** — Trusted Publishing requires the package to already exist on npm:
 
-   - Go to https://www.npmjs.com/settings/~/tokens
-   - Generate a new "Automation" token
-   - Copy the token value
+   ```bash
+   npm publish --access public
+   ```
 
-3. **Add Token to GitHub Secrets**:
+3. **Add Trusted Publisher on npm**:
 
-   - Go to your repo Settings → Secrets and variables → Actions
-   - Add a new repository secret named `NPM_TOKEN` with the token value
+   - Go to `https://www.npmjs.com/package/<your-package-name>/access`
+   - Under "Publishing access", click "Add trusted publisher" → GitHub Actions
+   - Set the following:
+     - **Owner/Organization**: your-github-org
+     - **Repository**: your-repo-name
+     - **Workflow filename**: `release-please.yml`
+     - **Environment**: `npm`
 
 4. **Create GitHub Environment**:
 
    - Go to your repo Settings → Environments
    - Create a new environment named `npm`
 
-The first release will publish your package to npm.
+5. **(Optional) Lock down token access**: On the npm package settings, select "Require two-factor authentication or an automation or trusted publishing access token" to prevent classic token usage
 
 ##### Disable Publishing
 
-If you don't want to publish to npm, remove the `build` and `publish` jobs from `.github/workflows/release-please.yml`. The release workflow will still create GitHub releases with changelogs.
+If you don't want to publish to npm, remove the `build` and `publish` jobs from `.github/workflows/release-please.yml`. No secrets need to be removed — npm uses Trusted Publishing (OIDC), so there are no tokens to clean up. The release workflow will still create GitHub releases with changelogs.
 
 #### GitHub Repository Settings
 
