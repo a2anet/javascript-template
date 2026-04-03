@@ -59,18 +59,28 @@ bun add --dev @biomejs/biome typescript
    - `src/index.ts`: Update SPDX header
    - `tests/index.test.ts`: Update SPDX header
 
-3. Initialise the project:
+3. Install dependencies:
 
 ```bash
-bun install
+make install
 ```
 
-4. Run the checks:
+4. Install the local git hooks:
 
 ```bash
-bun run check
-bun run typecheck
-bun test
+make install-hooks
+```
+
+5. Run the checks:
+
+```bash
+make ci
+```
+
+6. Auto-fix formatting before committing when needed:
+
+```bash
+make fix
 ```
 
 ### CI/CD
